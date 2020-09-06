@@ -1,0 +1,54 @@
+.container{
+    max-width: 800px;
+    margin:auto;
+    background-color:greenyellow ;
+    height: 60vh;
+}
+
+.message{
+
+    font-size: auto;
+     background-color:olivedrab ;
+     width: 24%;
+}
+
+.left{
+    float:left;
+    clear: both;
+}
+
+
+
+.send{
+
+    max-width: 955px;
+    margin:auto;
+}
+
+.k{
+    max-width: 955px;
+}
+
+
+.image{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 25%;
+  }
+
+  .u{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    height: 10%;
+    color: aquamarine;
+  }
+
+  .v{
+     float:right
+  }
+   
+
+  
