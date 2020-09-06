@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    
+    
+    <script   src="http://localhost:3000/socket.io/socket.io.js"></script>
+    <script  type="text/javascript">
+                    var socket=io('http://localhost:3000');
+                    var name=prompt("please enter your name")
+                    socket.emit('newuserjoined',name);
+                     socket.on('userjoined',name=>{
+                         append(`${name} joined`)
+                     })
+                    socket.on('chatmessage',data=>{
+                         append(`${data.name}: ${data.message}`,'left')
+                    })
+                     socket.on('chatmessage',data=>{
+                         console.log(data)
+                     })
+            document.addEventListener('submit',e=>{
+                    e.preventDefault();
+                     var msg=document.getElementById('message-input').value
+                     socket.emit('sendcht',msg)
+                  
+                     document.getElementById('message-input').value='';
+            })
+            function append(message){
+    var msgelmnt=document.createElement('div')
+    msgelmnt.innerText=message;
+    msgelmnt.classList.add('message')
+    
+    document.querySelector(".container").append(msgelmnt)
+   }
+        </script>
+          <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+      <img src="download.jpg" alt="logo" class="image">
+      <div class="container">
+          <div class="message left">person1:hru</div class="message rigth"> person2:imfyn     </div>
+     <div id="message-container">
+        <form id="send-container">
+            <input type="text" placeholder="sendmessage" id="message-input" class="u">
+            <br/>
+            <button type="submit" class="v" >send</button>
+        </form>
+     </div>
+ 
+</body>
